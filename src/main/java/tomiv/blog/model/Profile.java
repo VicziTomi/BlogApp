@@ -18,7 +18,7 @@ public class Profile {
     private int id;
 
     @Column(nullable = false, unique = true)
-    private String username;
+    private String nickname;
 
     @Column
     private String bio;
