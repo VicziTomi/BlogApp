@@ -47,4 +47,8 @@ public class Article {
     )
     private Set<Tag> tags;
 
+    @ManyToOne
+    @JoinColumn(name = "profile_id", nullable = false)
+    private Profile profile;
+
 }
