@@ -19,7 +19,6 @@ public class InitDataLoader implements CommandLineRunner {
     public void run(String... args) throws Exception {
         User user1 = new User();
         user1.setEmail("feri@mail.com");
-        user1.setUsername("Feri");
         user1.setPassword("go");
 
         userRepository.save(user1);

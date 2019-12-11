@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Users")
+@Table(name = "users")
 @Data
 @NoArgsConstructor
 public class User {
@@ -17,9 +17,6 @@ public class User {
     private int id;
 
     @Column(unique = true, nullable = false)
-    private String username;
-
-    @Column(unique = true, nullable = false)
     private String email;
 
     @Column(nullable = false)
@@ -27,5 +24,9 @@ public class User {
 
     @Column(nullable = true)
     private String token;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "profile_id", referencedColumnName = "id")
+    private Profile profile;
 
 }
